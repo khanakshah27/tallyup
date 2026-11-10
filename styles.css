@@ -1,0 +1,53 @@
+:root{--bg:#fbf7f2;--ink:#2a2420;--mut:#7d7168;--card:#fff;--line:#eadfd3;--acc:#e8553d;--acc2:#2f7d6d;--soft:#fdeee9}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
+.top{display:flex;justify-content:space-between;align-items:center;max-width:680px;margin:0 auto;padding:18px 20px}
+.brand{font-weight:800;letter-spacing:-.02em;display:flex;align-items:center;gap:8px}
+.logo{display:grid;place-items:center;width:28px;height:28px;border-radius:8px;background:var(--acc);color:#fff;font-weight:800}
+select{border:1px solid var(--line);background:#fff;border-radius:8px;padding:6px 8px;font:inherit}
+main{max-width:680px;margin:0 auto;padding:0 20px 40px}
+.hero{padding:18px 0 26px}
+h1{font:800 clamp(30px,6vw,44px)/1.08 Georgia,"Times New Roman",serif;letter-spacing:-.02em;margin:0 0 10px}
+h1 em{color:var(--acc);font-weight:700}
+.hero p{color:var(--mut);margin:0;max-width:46ch}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;margin-bottom:16px}
+h2{display:flex;align-items:center;gap:10px;margin:0 0 14px;font-size:18px}
+.n{display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--soft);color:var(--acc);font-size:13px;font-weight:800}
+.hint{color:var(--mut);font-size:13px;margin:10px 0 0}
+.drop{display:grid;place-items:center;text-align:center;gap:10px;border:2px dashed #e2cdbd;border-radius:14px;padding:26px;cursor:pointer;color:var(--mut);background:#fffaf6}
+.drop:hover{border-color:var(--acc)}
+.drop img{max-width:100%;max-height:240px;border-radius:10px}
+.ocr{margin-top:12px;font-size:13px;color:var(--mut)}
+.bar{height:6px;background:#f1e6dc;border-radius:99px;overflow:hidden;margin-bottom:6px}
+.bar i{display:block;height:100%;width:0;background:var(--acc);transition:width .2s}
+input,button{font:inherit}
+input{border:1px solid var(--line);border-radius:10px;padding:9px 11px;background:#fff;color:var(--ink);min-width:0}
+input:focus{outline:2px solid var(--acc);outline-offset:1px}
+button{border:0;border-radius:10px;padding:10px 16px;background:var(--acc);color:#fff;font-weight:700;cursor:pointer}
+button.ghost{background:var(--soft);color:var(--acc)}
+.item{display:grid;grid-template-columns:1fr 96px 34px;gap:8px;margin-bottom:8px}
+.item .x{background:none;color:var(--mut);padding:0;font-size:20px}
+.charges{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:16px}
+.charges label{display:grid;gap:4px;font-size:13px;color:var(--mut)}
+.row{display:flex;gap:8px}.row input{flex:1}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chip{display:inline-flex;align-items:center;gap:6px;border-radius:99px;padding:6px 12px;background:#eef6f3;color:var(--acc2);font-weight:600;border:1px solid #cfe5df}
+.chip button{background:none;color:inherit;padding:0 0 0 2px;font-size:16px;line-height:1}
+.as{padding:12px 0;border-top:1px solid var(--line)}
+.as:first-child{border-top:0}
+.as .t{display:flex;justify-content:space-between;gap:12px;font-weight:600}
+.as .t span:last-child{color:var(--mut);font-weight:500}
+.pick{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.pick button{background:#fff;color:var(--ink);border:1px solid var(--line);padding:5px 12px;border-radius:99px;font-weight:600}
+.pick button.on{background:var(--acc2);border-color:var(--acc2);color:#fff}
+.person{border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:10px;background:#fffdfb}
+.person .h{display:flex;justify-content:space-between;align-items:baseline}
+.person .h b{font-size:17px}.person .h .amt{font:800 22px Georgia,serif;color:var(--acc)}
+.person ul{list-style:none;margin:8px 0 0;padding:0;font-size:13px;color:var(--mut)}
+.person li{display:flex;justify-content:space-between;padding:2px 0}
+.grand{display:flex;justify-content:space-between;padding:12px 4px 0;font-size:15px;color:var(--mut)}
+.grand b{color:var(--ink)}
+.actions{display:flex;gap:8px;margin-top:14px}
+.warn{background:#fff4e0;border:1px solid #f1d49b;color:#7a5200;border-radius:10px;padding:10px 12px;font-size:13px;margin-bottom:12px}
+footer{text-align:center;color:var(--mut);font-size:12px;padding:0 20px 36px}
+@media (max-width:480px){.charges{grid-template-columns:1fr 1fr}.item{grid-template-columns:1fr 84px 30px}}

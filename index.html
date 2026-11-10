@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TallyUp: split the bill, item by item</title>
+<meta name="description" content="Photograph a restaurant bill, tap who ate what, and get exactly what everyone owes.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><span class="logo">T</span> TallyUp</div>
+  <select id="cur" aria-label="Currency"><option>₹</option><option>$</option><option>€</option><option>£</option></select>
+</header>
+
+<main>
+  <section class="hero">
+    <h1>Split the bill, <em>item by item.</em></h1>
+    <p>Snap the receipt. Tap who had what. Everyone pays exactly their share, tax and tip included.</p>
+  </section>
+
+  <section class="card" id="s1">
+    <h2><span class="n">1</span> The bill</h2>
+    <label class="drop" id="drop">
+      <input type="file" id="file" accept="image/*" capture="environment" hidden>
+      <span id="dropText">Take a photo or choose an image of the receipt</span>
+      <img id="preview" alt="" hidden>
+    </label>
+    <div id="ocr" class="ocr" hidden><div class="bar"><i id="bar"></i></div><span id="ocrText">Reading the receipt…</span></div>
+    <p class="hint">The photo is read on your device. It is never uploaded anywhere. No receipt handy? Add items by hand below.</p>
+  </section>
+
+  <section class="card" id="s2">
+    <h2><span class="n">2</span> Items</h2>
+    <div id="items"></div>
+    <button class="ghost" id="addItem">+ Add an item</button>
+    <div class="charges">
+      <label>Tax<input id="tax" inputmode="decimal" placeholder="0.00"></label>
+      <label>Service charge<input id="service" inputmode="decimal" placeholder="0.00"></label>
+      <label>Tip<input id="tip" inputmode="decimal" placeholder="0.00"></label>
+      <label>Discount<input id="discount" inputmode="decimal" placeholder="0.00"></label>
+    </div>
+  </section>
+
+  <section class="card" id="s3">
+    <h2><span class="n">3</span> Who's eating?</h2>
+    <form id="personForm" class="row"><input id="personName" placeholder="Add a name" autocomplete="off"><button>Add</button></form>
+    <div id="people" class="chips"></div>
+  </section>
+
+  <section class="card" id="s4">
+    <h2><span class="n">4</span> Who had what?</h2>
+    <p class="hint" id="assignHint">Add items and people first. Then tap names under each item. Tap several for a shared dish.</p>
+    <div id="assign"></div>
+    <button class="ghost" id="everyone" hidden>Split every unassigned item equally</button>
+  </section>
+
+  <section class="card result" id="s5">
+    <h2><span class="n">5</span> Everyone owes</h2>
+    <div id="warn" class="warn" hidden></div>
+    <div id="result"></div>
+    <div class="grand"><span>Bill total</span><b id="grand">0.00</b></div>
+    <div class="actions"><button id="copy">Copy summary</button><button class="ghost" id="share" hidden>Share</button></div>
+  </section>
+</main>
+
+<footer>Made by Khanak Shah. Receipts are read in your browser and never leave it.</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/tesseract.js@5.1.1/dist/tesseract.min.js" defer></script>
+<script src="src/parse.js"></script>
+<script src="src/split.js"></script>
+<script src="src/app.js"></script>
+</body>
+</html>

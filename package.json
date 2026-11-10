@@ -1,0 +1,8 @@
+{
+  "name": "tallyup",
+  "version": "0.1.0",
+  "description": "Photograph a restaurant bill and split it fairly, item by item.",
+  "private": true,
+  "license": "MIT",
+  "scripts": { "test": "node --test tests/*.test.js", "start": "python3 -m http.server 8080" }
+}
